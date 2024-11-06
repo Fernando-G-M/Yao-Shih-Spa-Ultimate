@@ -76,32 +76,91 @@
     </nav>
 
     <!-- Sección Bienvenida -->
-    <section id="bienvenida">
-        <div class="container mt-5">
-            <div class="card mb-3 border-0 bg-transparent">
-                <div class="row justify-content-center g-0">
-                    <div class="col-md-6 d-flex align-items-center">
-                        <div class="card-body text-justify slide-in-down">
-                            <h1 class="card-title">Bienvenido</h1>
-                            <p class="card-text">
-                                Bienvenidos a YAO SHIH SPA, un oasis de paz y bienestar en el corazón del Valle del
-                                Mezquital. Aquí, cada detalle ha sido creado para brindarles una experiencia holística
-                                que nutra cuerpo, mente y espíritu. Los invitamos a descubrir un espacio donde la
-                                sanación y la armonía se unen para transformar su calidad de vida. ¡Descubra el arte de
-                                sentirse pleno y revitalizado!
-                            </p>
-                        </div>
+    <!-- Sección Bienvenida -->
+<section id="bienvenida">
+    <div class="container mt-5">
+        <div class="card mb-3 border-0 bg-transparent">
+            <div class="row justify-content-center g-0">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="card-body text-justify slide-in-down">
+                        <h1 class="card-title">Bienvenido</h1>
+                        <p class="card-text">
+                            Bienvenidos a YAO SHIH SPA, un oasis de paz y bienestar en el corazón del Valle del
+                            Mezquital. Aquí, cada detalle ha sido creado para brindarles una experiencia holística
+                            que nutra cuerpo, mente y espíritu. Los invitamos a descubrir un espacio donde la
+                            sanación y la armonía se unen para transformar su calidad de vida. ¡Descubra el arte de
+                            sentirse pleno y revitalizado!
+                        </p>
                     </div>
-                    <div class="col-md-5">
-                        <div class="image-hover slide-in-down">
-                            <img src="./Resourses/section_nosotros_01.jpg" class="d-block w-100 rounded-img"
-                                alt="Imagen Bienvenida">
-                        </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="image-hover slide-in-down">
+                        <img src="/Resources/section_nosotros_01.jpg" class="d-block w-100 rounded-img"
+                             alt="Imagen Bienvenida">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.slide-in-down {
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease;
+}
+
+.slide-in-down.active {
+    animation: slideInDown 0.5s forwards; /* Aplica la animación */
+    opacity: 1; /* Asegura que se muestre al final de la animación */
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const paymentMethod = document.getElementById("payment-method");
+    const cardDetails = document.getElementById("cardDetails");
+
+    paymentMethod.addEventListener("change", function () {
+        if (paymentMethod.value === "tarjeta") {
+            cardDetails.style.display = "block"; // Mostrar los detalles de la tarjeta
+        } else {
+            cardDetails.style.display = "none"; // Ocultar los detalles de la tarjeta
+        }
+    });
+
+    const sections = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down, .scale-up, .fade-in, .rotate-in');
+
+    function checkSlide() {
+        const windowHeight = window.innerHeight;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+
+            // Verifica si el elemento está visible en la ventana
+            if (rect.top <= windowHeight && rect.bottom >= 0) {
+                section.classList.add('active'); // Agrega la clase activa
+            } else {
+                section.classList.remove('active'); // Elimina la clase si no está visible
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkSlide);
+    checkSlide(); // Comprueba inicialmente si está visible
+});
+</script>
 
     <!-- Sección "Lo destacado" -->
     <section id="destacado">
