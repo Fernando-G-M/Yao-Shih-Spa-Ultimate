@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,10 +13,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Spa Yao Shih</title>
+
     <style>
-        /* Estilo para prevenir el clic derecho en las imágenes */
+        /* Estilo para deshabilitar el clic derecho en las imágenes */
         img {
-            pointer-events: none; /* Desactiva eventos del ratón en las imágenes */
+            pointer-events: none; /* Deshabilita interacciones con imágenes */
         }
     </style>
 </head>
@@ -106,8 +107,6 @@
         </div>
     </section>
 
-
-    <!-- Misión y Visión -->
     <!-- Misión y Visión -->
     <section id="mision">
         <div class="container mt-5">
@@ -165,14 +164,12 @@
         </div>
     </section>
 
-
-
     <!-- Sección Valores -->
     <section id="valores">
         <div class="container mt-5">
-            <h2 class="text-center">Valores</h2> <!-- Título centrado -->
-            <div class="row text-center mt-4"> <!-- Fila de tarjetas -->
-                <div class="col-md-4"> <!-- Primera tarjeta -->
+            <h2 class="text-center">Valores</h2>
+            <div class="row text-center mt-4">
+                <div class="col-md-4">
                     <div class="card border-custom card-body">
                         <img src="https://yaoshih.s3.us-east-2.amazonaws.com/section_mision_03.jpg" class="card-img-top img-fluid mx-auto"
                             alt="Valor 1">
@@ -183,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4"> <!-- Segunda tarjeta -->
+                <div class="col-md-4">
                     <div class="card border-custom card-body">
                         <img src="https://yaoshih.s3.us-east-2.amazonaws.com/section_nosotros_03.jpg" class="card-img-top img-fluid mx-auto"
                             alt="Valor 2">
@@ -194,7 +191,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4"> <!-- Tercera tarjeta -->
+                <div class="col-md-4">
                     <div class="card border-custom card-body">
                         <img src="https://yaoshih.s3.us-east-2.amazonaws.com/section_mision_02.jpg" class="card-img-top img-fluid mx-auto"
                             alt="Valor 3">
@@ -202,7 +199,7 @@
                             <h5 class="card-title">Excelencia</h5>
                             <p class="card-text">Buscamos la perfección en cada aspecto de nuestros servicios, desde la
                                 atención al cliente hasta los tratamientos que ofrecemos, con el objetivo de superar las
-                                expectativas de nuestros pacientes.</p>
+                                expectativas de nuestros pacientes.</p>
                         </div>
                     </div>
                 </div>
@@ -210,11 +207,9 @@
         </div>
     </section>
 
-
     <!-- FOOTER -->
     <footer>
         <div class="footer-container">
-            <!-- Columna 2: Información de contacto -->
             <div class="footer-section-2">
                 <div>
                     <h3>Información de Contacto</h3>
@@ -231,7 +226,6 @@
                 <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
 
-            <!-- Columna 3: Horarios de atención -->
             <div class="footer-section-2">
                 <h3>Horarios de Atención</h3>
                 <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM</p>
@@ -240,11 +234,19 @@
             </div>
         </div>
 
-        <!-- Derechos de autor -->
         <div class="footer-bottom">
             <p>© 2024 Spa YAO SHIH. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Deshabilitar clic derecho para evitar copiar imágenes
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
